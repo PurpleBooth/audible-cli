@@ -416,6 +416,7 @@ class Library(BaseList):
             response_callback=full_response_callback,
             **request_params
         )
+        logger.debug("from_api", resp)
         resp_content = convert_response_content(resp)
         total_count_header = resp.headers.get("total-count")
         cls_instance = cls(resp_content, api_client=api_client)
